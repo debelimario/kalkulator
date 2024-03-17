@@ -1,1 +1,72 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style Kopie.css">
+
+    <script>
+        function dodoperacija(operacija) {
+            document.getElementById("rezultat").innerHTML += operacija;
+        }
+
+        function kalkResul() {
+            let kont = document.getElementById("rezultat");
+            let rezul = eval(kont.innerHTML);
+            kont.innerHTML = rezul;
+        }
+
+        function delZadnje() {
+            let kont = document.getElementById("rezultat");
+            if (kont.innerHTML.endsWith(' ')) {
+                kont.innerHTML = kont.innerHTML.slice(0, -3);
+            } else {
+                kont.innerHTML = kont.innerHTML.slice(0, -1);
+                // zadnja znamenka se brise, ako je prazno brise 3
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="rezultat"></div>
+    <table>
+        <tr>
+            <td onclick="dodoperacija('**')" class=" bakar ">xy</td>
+            <td class="bakar "></td>
+            <td class="bakar ">%</td>
+            <td onclick="delZadnje() ">DEL</td>
+        </tr>
+        <tr>
+            <td onclick="dodoperacija(7) ">7</td>
+            <td onclick="dodoperacija(8) ">8</td>
+            <td onclick="dodoperacija(9) ">9</td>
+            <td onclick="dodoperacija( ' / ') " class="zlato ">/</td>
+        </tr>
+        <tr>
+            <td onclick="dodoperacija(4) ">4</td>
+            <td onclick="dodoperacija(5) ">5</td>
+            <td onclick="dodoperacija(6) ">6</td>
+            <td onclick="dodoperacija( ' * ') " class="zlato ">X</td>
+        </tr>
+        <tr>
+            <td onclick="dodoperacija(1) ">1</td>
+            <td onclick="dodoperacija(2) ">2</td>
+            <td onclick="dodoperacija(3) ">3</td>
+            <td onclick="dodoperacija( ' - ') " class="zlato ">-</td>
+        </tr>
+        <tr>
+            <td onclick="dodoperacija(0) ">0</td>
+            <td onclick="dodoperacija( '.') ">,</td>
+            <td onclick="kalkResul() " id="jednako ">=</td>
+            <td onclick="dodoperacija( ' + ') " class="zlato ">+</td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
