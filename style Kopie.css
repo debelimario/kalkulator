@@ -29,10 +29,10 @@ td:hover {
 
 #rezultat {
     height: 30vh;
-    background-color: rgb(70, 80, 92);
+    background-color: rgb(199, 209, 222);
     font-size: 70px;
     text-align: right;
-    color: blue;
+    color: rgb(4, 94, 127);
     padding: 50px;
     box-sizing: border-box;
     border-radius: 10px;
